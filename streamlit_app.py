@@ -2,20 +2,20 @@ from model import GoodDealModel
 from procesa_imagen import getDataFromImage
 import streamlit as st
 
+@st.cache_resource
+def initial_load():
+    """Método para cargar el módelo y la key de la api al principio"""
+    return GoodDealModel(), st.secrets['GEMINI_API_KEY']
+
+# Carga el modelo y la api key
+goodDealModel, api_key = initial_load()
+
 # Título, descripción e imagen de la aplicación
 st.title("GoodDealML")
 st.write("GoodDealML es un clasficador de oferta que se encarga de predecir si una oferta es Mala, Regular o Buena. Para ello, debe introducir los datos de su producto o bien subir una foto de la que se sacarán los datos necesarios de forma automática.")
 st.image("img/logo.jpeg", use_container_width=True)
 # Creación de las pestañas para el escáner y para los datos manuales
 tab1, tab2 = st.tabs(["FotoScan", "Manual"])
-
-@st.cache_resource
-def initial_load():
-    """Método para cargar el módelo y la key de la api únicamente al principio"""
-    return GoodDealModel(), st.secrets['GEMINI_API_KEY']
-
-# Carga el modelo
-goodDealModel, api_key = initial_load()
 # Pestaña 1 con el escáner de las fotos
 with tab1:
     # Carga la imagen

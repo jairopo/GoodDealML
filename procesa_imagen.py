@@ -5,6 +5,10 @@ import PIL.Image
 import json
 
 def getDataFromImage(image, api_key):
+    """
+    Devuelve la información referente al producto utilizando un modelo Gemini 2.0 Flash
+    que procesa la imagen proporcionada y saca el título, la empresa y los precios
+    """
     sample_file_1 = PIL.Image.open(image)
     genai.configure(api_key=api_key)
     # Crea la configuración del modelo

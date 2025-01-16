@@ -15,7 +15,7 @@ class GoodDealModel:
         self._cargaModelo()
 
     def _cargaModelo(self):
-        # Carga del modelo y del escalador
+        """Carga el modelo y el escalador"""
         print("Cargando el modelo y el escalador...")
         try:
             self._modelo = joblib.load('./model/modelo_xgboost_clasificacion.joblib')
@@ -37,6 +37,7 @@ class GoodDealModel:
     
     @staticmethod
     def _getListaEmpresas():
+        """Devuelve la lista de empresas"""
         return ['empresa_AliExpress', 'empresa_Amazon', 'empresa_Asos', 'empresa_Carrefour', 'empresa_Decathlon',
                 'empresa_El Corte Inglés', 'empresa_Fnac', 'empresa_Game', 'empresa_Lidl', 'empresa_MediaMarkt',
                 'empresa_Miravia', 'empresa_Outlet PC', 'empresa_PcComponentes', 'empresa_Privalia',
@@ -45,6 +46,7 @@ class GoodDealModel:
                 ]
     
     def _getEmpresaSeleccionada(self, empresa_input):
+        """Devuelve la empresa seleccionada"""
         empresa_feature = 'empresa_otras'  # Valor por defecto
         # Compara de forma insensible a mayúsculas y espacios
         empresa_input_normalizada = empresa_input.lower().replace(" ", "").replace("_", "")
@@ -58,7 +60,7 @@ class GoodDealModel:
         return empresa_feature
 
     def _getTituloEmbedding(self, titulo):
-        # Generación del embedding para el título del producto
+        """Devuelve el embedding generado para el título del producto"""
         sentences = [titulo]
         try:
             embeddings = self._embedding_model.encode(
@@ -72,12 +74,13 @@ class GoodDealModel:
             sys.exit(1)
 
     def _getEmpresaFeature(self, empresa_feature):
-        # Preparación de las características de la empresa (one-hot encoding)
+        """Devuelve las características de la empresa en one-hot encoding"""
         empresa_features = {empresa:0 for empresa in self._lista_empresas}
         empresa_features[empresa_feature] = 1
         return empresa_features
     
     def _getClasePredicha(self, y_pred_proba):
+        """Devuelve la clase predicha según los umbrales óptimos establecidos"""
         # Aplicación de umbrales óptimos para las 3 clases
         umbrales_optimos = {
             0: 0.30,  # Clase 0: Mala oferta
@@ -108,6 +111,10 @@ class GoodDealModel:
 
 
     def predict(self, titulo, empresa, precio_anterior, precio_actual):
+        """
+        Predice el tipo de oferta según los datos proporcionados. 
+        Devuelve el tipo de oferta, la diferencia de precios, el porcentaje de descuento y el ratio de precios
+        """
         # Recoge la empresa seleccionada y el embedding del titulo
         empresa_seleccionada = self._getEmpresaSeleccionada(empresa)
         embedding_vector = self._getTituloEmbedding(titulo)
