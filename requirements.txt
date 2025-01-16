@@ -3,5 +3,5 @@ joblib
 pandas
 numpy
 google-generativeai
-google.ai.generativelanguage_v1beta.types
-PIL.Image
+google-ai-generativelanguage_v1beta-types
+PIL-Image
