@@ -2,6 +2,5 @@ FlagEmbedding
 joblib
 pandas
 numpy
-google-generativeai
-google-ai-generativelanguage_v1beta-types
+google
 PIL-Image
