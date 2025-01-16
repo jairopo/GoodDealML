@@ -1,7 +1,7 @@
+from FlagEmbedding import BGEM3FlagModel
 import pandas as pd
 import numpy as np
 import joblib
-from FlagEmbedding import BGEM3FlagModel
 import sys
 
 class GoodDealModel:
