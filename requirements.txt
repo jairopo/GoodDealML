@@ -1,2 +1,7 @@
 FlagEmbedding
 joblib
+pandas
+numpy
+google.ai.generativelanguage_v1beta.types
+PIL.Image
+google.generativeai

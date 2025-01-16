@@ -1,7 +1,6 @@
 from google.ai.generativelanguage_v1beta.types import content
 import PIL.Image
 import google.generativeai as genai
-import PIL.Image
 import json
 
 def getDataFromImage(image, api_key):
