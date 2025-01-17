@@ -2,6 +2,7 @@ FlagEmbedding
 joblib
 pandas
 numpy
+xgboost
 google-generativeai
 google-ai-generativelanguage
 pillow
