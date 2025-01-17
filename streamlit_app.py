@@ -50,10 +50,9 @@ with tab1:
                         # Muestra la lista de datos
                         st.markdown("""
                         ### Resultados del cálculo:
-                        - **Diferencia de precios:** {:.2f}
+                        - **Diferencia de precios:** {:.2f}€
                         - **Porcentaje de descuento:** {:.2f}%
-                        - **Ratio de precios:** {:.2f}
-                        """.format(diferencia_precios, porcentaje_descuento, ratio_precios), unsafe_allow_html=True)
+                        """.format(diferencia_precios, porcentaje_descuento), unsafe_allow_html=True)
                         st.markdown(f"<h3>Oferta: {oferta}</h3>", unsafe_allow_html=True)
         except Exception as e:
             st.error(f"Error procesando la imagen: {e}")
@@ -78,14 +77,13 @@ with tab2:
         else:
             with st.spinner("Calculando..."):
                 # Recoge los datos de la oferta
-                oferta, diferencia_precios, porcentaje_descuento, ratio_precios = goodDealModel.predict(titulo, empresa, precio_anterior, precio_actual)
+                oferta, diferencia_precios, porcentaje_descuento = goodDealModel.predict(titulo, empresa, precio_anterior, precio_actual)
                 # Muestra la lista de datos
                 st.markdown("""
                 ### Resultados del cálculo:
-                - **Diferencia de precios:** {:.2f}
+                - **Diferencia de precios:** {:.2f}€
                 - **Porcentaje de descuento:** {:.2f}%
-                - **Ratio de precios:** {:.2f}
-                """.format(diferencia_precios, porcentaje_descuento, ratio_precios), unsafe_allow_html=True)
+                """.format(diferencia_precios, porcentaje_descuento), unsafe_allow_html=True)
                 st.markdown(f"<h3>Oferta: {oferta}</h3>", unsafe_allow_html=True)
 
     

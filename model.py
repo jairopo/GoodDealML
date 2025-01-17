@@ -113,7 +113,7 @@ class GoodDealModel:
     def predict(self, titulo, empresa, precio_anterior, precio_actual):
         """
         Predice el tipo de oferta según los datos proporcionados. 
-        Devuelve el tipo de oferta, la diferencia de precios, el porcentaje de descuento y el ratio de precios
+        Devuelve el tipo de oferta, la diferencia de precios y el porcentaje de descuento
         """
         # Recoge la empresa seleccionada y el embedding del titulo
         empresa_seleccionada = self._getEmpresaSeleccionada(empresa)
@@ -153,8 +153,8 @@ class GoodDealModel:
             sys.exit(1)
         # Recoge el nombre de la clase predicha
         nombre_clase_predicha = self._getClasePredicha(y_pred_proba)
-        # Devuelve el tipo de oferta, la diferencia de precios, el porcentaje de descuento y el ratio de precios
-        return nombre_clase_predicha, diferencia_precios, porcentaje_descuento, ratio_precios
+        # Devuelve el tipo de oferta, la diferencia de precios y el porcentaje de descuento
+        return nombre_clase_predicha, diferencia_precios, porcentaje_descuento
     
         
 
