@@ -86,4 +86,28 @@ with tab2:
                 """.format(diferencia_precios, porcentaje_descuento), unsafe_allow_html=True)
                 st.markdown(f"<h3>Oferta: {oferta}</h3>", unsafe_allow_html=True)
 
+# Footer personalizado
+footer = """
+<style>
+footer {
+    visibility: hidden;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+</style>
+<div class="footer">
+    Desarrollado por: <b>Marcos García Estévez , Darío Nievas López y  Jairo Andrades Bueno</b> - Enero 2025
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
+
     
