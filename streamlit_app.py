@@ -46,7 +46,7 @@ with tab1:
                 else:
                     with st.spinner("Calculando..."):
                         # Recoge los datos de la oferta
-                        oferta, diferencia_precios, porcentaje_descuento, ratio_precios = goodDealModel.predict(titulo, empresa, precio_anterior, precio_actual)
+                        oferta, diferencia_precios, porcentaje_descuento = goodDealModel.predict(titulo, empresa, precio_anterior, precio_actual)
                         # Muestra la lista de datos
                         st.markdown("""
                         ### Resultados del cálculo:
