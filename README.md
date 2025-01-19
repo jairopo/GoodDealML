@@ -13,7 +13,6 @@ Proyecto que desarrolla un modelo para detectar si una oferta es buena, regular 
     - [2. Entrenamiento del Modelo de ML](#2-entrenamiento-del-modelo-de-ml)
     - [3. Despliegue del Modelo con Streamlit](#3-despliegue-del-modelo-con-streamlit)
 4. [Tecnologías Utilizadas](#tecnologías-utilizadas)
-5. [Licencia](#licencia)
 
 ## 👥 Autores
 
