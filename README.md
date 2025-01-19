@@ -47,6 +47,7 @@ Proyecto que desarrolla un modelo para detectar si una oferta es buena, regular 
     - **FotoScan 📷:** Los usuarios pueden subir una imagen del producto y el modelo **Gemini 2.0 Flash** extraerá automáticamente el título, la empresa y los precios.
     - **Manual 📝:** Los usuarios pueden ingresar manualmente los detalles del producto.
 - **Resultados en Tiempo Real:** Al hacer clic en "Calcular oferta", la aplicación muestra si la oferta es buena, regular o mala, además de la diferencia de precios y el porcentaje de descuento.
+- **Streamlit Cloud:** La aplicación está disponible para su uso en el siguiente enlace https://gooddealml.streamlit.app
 
 ## 🧰 Tecnologías Utilizadas
 
